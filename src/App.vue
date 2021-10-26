@@ -3,8 +3,21 @@
     <v-main>
       <v-row style="height: 100vh; padding: 10px">
         <v-col cols="4" style="max-height: 100%">
-          <v-btn color="primary" v-on:click="newItem()" block>New</v-btn>
-          <IdeaList :selected="selected" :items="items" @select="select($event)"/>
+          <v-row>
+            <v-col cols="2">
+              <v-btn color="primary" v-on:click="copyLog()" block>
+                <!-- Copy Log --> <v-icon dark>mdi-content-copy</v-icon>
+              </v-btn>
+            </v-col>
+            <v-col cols="10">
+              <v-btn color="primary" v-on:click="newItem()" block>
+                New <v-icon right dark>mdi-plus-circle-outline</v-icon>
+              </v-btn>
+            </v-col>
+          </v-row>
+          <v-row>
+            <IdeaList :selected="selected" :items="items" @select="select($event)"/>
+          </v-row>
         </v-col>
 
         <v-col cols="8" style="max-height: 100%">
@@ -69,6 +82,9 @@ export default {
       this.items.push(newItem);
       this.selected = newItem;
       ls_set('ideas', this.items);
+    },
+    copyLog(){
+      navigator.clipboard.writeText(JSON.stringify(this.items));
     }
   },
 

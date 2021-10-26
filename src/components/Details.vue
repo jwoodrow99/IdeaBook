@@ -130,7 +130,7 @@
 
     computed: {
       formattedTest: function(){
-        return this.item.text.slice(0, 100);
+        return this.item.text.slice(0, 100) + '...';
       }
     },
 
