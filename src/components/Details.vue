@@ -11,6 +11,8 @@
 
         <ckeditor :key="text" :editor="editor" v-model="text" :config="editorConfig"></ckeditor>
 
+        <v-btn v-on:click="save()" block>Save</v-btn>
+
       </v-col>
     </v-row>
   </v-container>
@@ -107,7 +109,8 @@
 
     methods: {
       save(){
-        console.log('save');
+        console.log(this.title);
+        console.log(this.text);
       }
     },
 
