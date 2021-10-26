@@ -5,13 +5,13 @@
         <v-col cols="4" style="max-height: 100%">
           <v-row>
             <v-col cols="2">
-              <v-btn color="primary" v-on:click="copyLog()" block>
-                <!-- Copy Log --> <v-icon dark>mdi-content-copy</v-icon>
+              <v-btn rounded color="primary" v-on:click="copyLog()" block>
+                <!-- Copy Log --> <v-icon>mdi-content-copy</v-icon>
               </v-btn>
             </v-col>
-            <v-col cols="10">
-              <v-btn color="primary" v-on:click="newItem()" block>
-                New <v-icon right dark>mdi-plus-circle-outline</v-icon>
+            <v-col cols="2">
+              <v-btn rounded color="primary" v-on:click="newItem()" block>
+                <!-- New --> <v-icon>mdi-plus-circle-outline</v-icon>
               </v-btn>
             </v-col>
           </v-row>
