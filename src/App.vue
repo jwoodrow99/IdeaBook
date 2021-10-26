@@ -1,60 +1,82 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
     <v-main>
-      <HelloWorld/>
+      <v-row>
+        <v-col cols="4">
+          <IdeaList :items="items" @select="select($event)"/>
+        </v-col>
+
+        <v-col cols="8">
+          <Details :key="selected" v-if="selected" :item="selected"/>
+        </v-col>
+      </v-row>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import IdeaList from './components/IdeaList';
+import Details from './components/Details';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    IdeaList,
+    Details
   },
 
   data: () => ({
-    //
+    items: [],
+    selected: false,
   }),
+
+  methods: {
+    select(item){
+      this.selected = item;
+    }
+  },
+
+  mounted() {
+
+    this.items = [
+      {
+        id: 10,
+        created: '1635183856988',
+        updted: '1635183856988',
+        title: 'Ali Connors',
+        text: `I'll be in your neighborhood doing errands this weekend. Do you want to hang out?`,
+      },
+      {
+        id: 20,
+        created: '1635183856988',
+        updted: '1635183856988',
+        text: `Wish I could come, but I'm out of town this weekend.`,
+        title: 'me, Scrott, Jennifer',
+      },
+      {
+        id: 30,
+        created: '1635183856988',
+        updted: '1635183856988',
+        text: 'Do you have Paris recommendations? Have you ever been?',
+        title: 'Sandra Adams',
+      },
+      {
+        id: 40,
+        created: '1635183856988',
+        updted: '1635183856988',
+        text: 'Have any ideas about what we should get Heidi for her birthday?',
+        title: 'Trevor Hansen',
+      },
+      {
+        id: 50,
+        created: '1635183856988',
+        updted: '1635183856988',
+        text: 'We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+        title: 'Britta Holt',
+      },
+    ];
+
+  }
 };
 </script>
