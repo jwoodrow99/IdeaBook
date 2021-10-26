@@ -8,7 +8,8 @@
                 <template>
                   <v-list-item-content>
                     <v-list-item-title v-text="item.title"></v-list-item-title>
-                    <v-list-item-subtitle v-html="item.text"></v-list-item-subtitle>
+                    <!-- <v-list-item-subtitle v-text="item.text"></v-list-item-subtitle> -->
+                    <!-- <v-list-item-subtitle v-html="item.text"></v-list-item-subtitle> -->
                   </v-list-item-content>
 
                   <v-list-item-action>
