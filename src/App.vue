@@ -4,12 +4,12 @@
       <v-row style="height: 100vh; padding: 10px">
         <v-col cols="4" style="max-height: 100%">
           <v-row>
-            <v-col cols="2">
+            <v-col>
               <v-btn rounded color="primary" v-on:click="copyLog()" block>
                 <!-- Copy Log --> <v-icon>mdi-content-copy</v-icon>
               </v-btn>
             </v-col>
-            <v-col cols="2">
+            <v-col>
               <v-btn rounded color="primary" v-on:click="newItem()" block>
                 <!-- New --> <v-icon>mdi-plus-circle-outline</v-icon>
               </v-btn>
