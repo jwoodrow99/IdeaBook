@@ -3,6 +3,7 @@
     <v-main>
       <v-row>
         <v-col cols="4">
+          <v-btn v-on:click="newItem()" block>New</v-btn>
           <IdeaList :items="items" @select="select($event)"/>
         </v-col>
 
@@ -34,6 +35,9 @@ export default {
   methods: {
     select(item){
       this.selected = item;
+    },
+    newItem(){
+      console.log("New Item");
     }
   },
 
