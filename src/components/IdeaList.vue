@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12" style="padding: 0px;">
-        <v-list style="max-height: 100%" class="overflow-y-auto" two-line>
+        <v-list style="max-height: 75vh;" class="overflow-y-auto" two-line>
             <template v-for="(item, index) in items">
               <v-list-item v-on:click="select(item)" :class="(selected == item)?'active':''" :key="item.id">
                 <template>
@@ -62,5 +62,9 @@
 <style lang="scss" scoped>
   .active {
     background-color: LightGray;
+  }
+
+  .overflow-y-auto {
+    overflow-y: scroll;
   }
 </style>
